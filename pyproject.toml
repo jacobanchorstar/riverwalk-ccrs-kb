@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "riverwalk-ccrs-kb"
+version = "0.1.0"
+description = "OCR + parser to convert Riverwalk HOA CCRs/Bylaws PDF into a structured JSON knowledge base."
+authors = [{ name = "Jacob Anchorstar" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pdf2image",
+  "pytesseract",
+  "Pillow",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+riverwalk-ccrs-build = "riverwalk_ccrs_kb.cli:main"
+riverwalk-ccrs-validate = "riverwalk_ccrs_kb.validate:main"

@@ -1,0 +1,23 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+
+# Local input/output files (do NOT commit)
+data/*.pdf
+output/*.json
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
