@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 
-SECTION_NUM_RE = re.compile(r"^\d+(\.\d+)+$")
+SECTION_NUM_RE = re.compile(r"^\d+(\.\d+)+[a-z]?$")
 FOOTER_RE = re.compile(r"\bPage\s*\|\s*\d+\b|\bBK\d{6,}\b", re.IGNORECASE)
 
 
@@ -129,3 +129,7 @@ def main() -> None:
     print(f"\nSummary: {len(errors)} errors, {len(warns)} warnings, {len(issues)} total issues.")
     if errors or (args.fail_on_warn and warns):
         sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
